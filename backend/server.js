@@ -9,7 +9,13 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+
+app.use(cors({
+  origin: ["https://knowledge-knockout-ivory.vercel.app/"],
+  methods: ['GET', 'POST'],
+  credentials: True
+}));
+
 app.use(express.json());
 
 // Sample quiz data
